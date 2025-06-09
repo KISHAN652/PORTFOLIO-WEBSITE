@@ -1,0 +1,649 @@
+/* ============================= */
+/* 🎨 Font Import & General Setup */
+/* ============================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Montserrat:wght@700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    transition: background 0.3s ease-in-out;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ============================= */
+/* 🔹 Header & Navbar */
+/* ============================= */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #222;
+    color: white;
+    position: relative;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-left: 100px;
+}
+
+.menu-btn {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* ============================= */
+/* 🛠️ Hamburger Menu */
+/* ============================= */
+#navMenu {
+    position: fixed;
+    top: auto;
+    right: -100%;
+    width: auto;
+    min-width: 200px;
+    max-width: 40%;
+    height: 100vh;
+    background: #222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out;
+    padding: 15px;
+}
+
+#navMenu.open {
+    right: 0;
+}
+
+#navMenu ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+#navMenu ul li {
+    margin: 10px 0;
+}
+
+#navMenu ul li a {
+    color: white;
+    font-size: 1.4rem;
+    text-decoration: none;
+    padding: 8px 12px;
+    display: block;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+#navMenu ul li a:hover {
+    background: #444;
+    transform: scale(1.05);
+}
+
+/* ============================= */
+/* 🌙 Dark Mode Compatibility */
+/* ============================= */
+.dark-mode {
+    background-color: #222;
+    color: white;
+}
+
+.dark-mode header {
+    background-color: #111;
+}
+
+.dark-mode a {
+    color: #f5f5f5;
+}
+
+.dark-mode a:hover {
+    color: #00c6ff;
+}
+
+.dark-mode #navMenu {
+    background-color: #111;
+    right: -100%;
+}
+
+.dark-mode #navMenu.open {
+    right: 0;
+}
+
+.dark-mode #navMenu ul li a:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+/* Dark Mode Button */
+.dark-mode-btn {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    background: linear-gradient(45deg, #0072ff, #00c6ff);
+    border: none;
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.dark-mode-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(0, 198, 255, 0.5);
+}
+
+.dark-mode .dark-mode-btn {
+    background: linear-gradient(45deg, #ff8c00, #ff4500);
+}
+
+/* ============================= */
+/* 🎯 Hero Section */
+/* ============================= */
+#hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 6rem 2rem;
+    background: linear-gradient(to right, #0072ff, #00c6ff);
+    color: white;
+}
+
+#hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+/* ============================= */
+/* 🎨 Hero Section */
+/* ============================= */
+#hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 6rem 2rem;
+    background: linear-gradient(to right, #0072ff, #00c6ff);
+    color: white;
+}
+
+/* Hero Subtitle */
+#hero p {
+    font-size: 1.4rem;
+    max-width: 600px;
+    line-height: 1.5;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Call to Action Button */
+.cta {
+    display: inline-block;
+    margin-top: 20px;
+    background: #ff8c00;
+    color: #0072ff;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.cta:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+
+    #hero p {
+        font-size: 1.2rem;
+    }
+
+    .cta {
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #hero h1 {
+        font-size: 2rem;
+    }
+
+    #hero p {
+        font-size: 1rem;
+    }
+
+    .cta {
+        padding: 8px 18px;
+    }
+}
+
+/* ============================= */
+/* 📌 About Section */
+/* ============================= */
+#about {
+    padding: 4rem 2rem;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+/* About Heading */
+#about h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #0072ff;
+    margin-bottom: 15px;
+}
+
+/* About Paragraph */
+#about p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Skills List */
+#about h3 {
+    font-size: 2rem;
+    margin-top: 25px;
+    color: #ff8c00;
+}
+
+#about ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+#about ul li {
+    font-size: 1.2rem;
+    padding: 8px 12px;
+    display: inline-block;
+    background: #0072ff;
+    color: white;
+    border-radius: 6px;
+    margin: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Hover Effect */
+#about ul li:hover {
+    background: #ff4500;
+    transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    #about h2 {
+        font-size: 2rem;
+    }
+
+    #about p {
+        font-size: 1.1rem;
+    }
+
+    #about ul li {
+        font-size: 1rem;
+        padding: 6px 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #about h2 {
+        font-size: 1.8rem;
+    }
+
+    #about p {
+        font-size: 1rem;
+    }
+
+    #about ul li {
+        font-size: 0.9rem;
+        padding: 5px 8px;
+    }
+}
+
+/* ============================= */
+/* 📄 Download CV Button */
+/* ============================= */
+.cv-btn {
+    display: block;
+    margin: 20px auto;
+    background: linear-gradient(45deg, #0072ff, #00c6ff);
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.cv-btn:hover {
+    background: linear-gradient(45deg, #ff8c00, #ff4500);
+    transform: scale(1.1);
+    box-shadow: 0px 5px 15px rgba(255, 140, 0, 0.5);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .cv-btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .cv-btn {
+        padding: 8px 18px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ============================= */
+/* 🔥 Projects Section */
+/* ============================= */
+#projects {
+    padding: 4rem 2rem;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+/* Projects Heading */
+#projects h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #0072ff;
+    margin-bottom: 20px;
+}
+
+/* Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Project Card */
+.project-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Project Images */
+.project-card img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Project Title */
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-top: 15px;
+    color: #ff8c00;
+}
+
+/* Project Description */
+.project-card p {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Hover Effects */
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-card img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .project-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .project-card p {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        padding: 15px;
+    }
+}
+/* ============================= */
+/* 🛠️ Contact Section - Clean & Structured */
+/* ============================= */
+#contact {
+    padding: 4rem 2rem;
+    background: #222;
+    text-align: center;
+    color: white;
+    min-height: 100vh; /* Ensures full height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content properly */
+    box-sizing: border-box;
+}
+
+/* Fix Overflow Issues */
+#contact p,
+#contact a {
+    word-wrap: break-word;
+}
+
+/* Contact Heading */
+#contact h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #00c6ff;
+    margin-bottom: 20px;
+}
+
+/* Contact Details */
+#contact p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+/* Contact Links */
+#contact a {
+    color: #ff8c00;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out, text-shadow 0.2s ease-in-out;
+}
+
+/* Hover Effect */
+#contact a:hover {
+    color: #ff4500;
+    text-shadow: 0px 4px 10px rgba(255, 69, 0, 0.5);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    #contact {
+        min-height: auto; /* Adjust height for smaller screens */
+        padding: 3rem 1.5rem;
+    }
+
+    #contact h2 {
+        font-size: 2rem;
+    }
+
+    #contact p {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #contact {
+        min-height: auto;
+        padding: 2rem 1rem;
+    }
+
+    #contact h2 {
+        font-size: 1.8rem;
+    }
+
+    #contact p {
+        font-size: 1rem;
+    }
+}
+
+/* Reduced Padding for Desktop */
+@media screen and (min-width: 1024px) {
+    #contact {
+        padding: 2.5rem;
+    }
+}
+
+/* ============================= */
+/* 🌙 Dark Mode Compatibility */
+/* ============================= */
+.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: white; /* Light text */
+}
+
+/* Header */
+.dark-mode header {
+    background-color: #1e1e1e;
+}
+
+/* Sections */
+.dark-mode #hero {
+    background: linear-gradient(to right, #333, #444);
+}
+
+.dark-mode #about,
+.dark-mode #projects,
+.dark-mode #contact {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+/* Buttons & Links */
+.dark-mode .cta,
+.dark-mode .cv-btn {
+    background: #ff8c00;
+    color: white;
+}
+
+.dark-mode a {
+    color: #00c6ff;
+}
+
+.dark-mode a:hover {
+    color: #ff4500;
+}
+
+/* ============================= */
+/* 🎨 Dark Mode - About Section Fix */
+/* ============================= */
+.dark-mode #about {
+    background-color: #1e1e1e;
+    color: white; /* Ensure text visibility */
+}
+
+/* Heading & Text Contrast */
+.dark-mode #about h2, 
+.dark-mode #about h3 {
+    color: #00c6ff; /* Bright text for clarity */
+}
+
+.dark-mode #about p {
+    color: #dcdcdc; /* Light gray for better readability */
+}
+
+/* Skills List */
+.dark-mode #about ul li {
+    background: #0072ff;
+    color: white;
+}
+
+.dark-mode #about ul li:hover {
+    background: #ff4500;
+}
+
+/* ============================= */
+/* 🔥 Dark Mode - Projects Section Fix */
+/* ============================= */
+.dark-mode #projects {
+    background-color: #1e1e1e;
+    color: white; /* Ensure text visibility */
+}
+
+/* Project Cards */
+.dark-mode .project-card {
+    background-color: #2a2a2a; /* Darker background */
+    color: white;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1); /* Softer shadow */
+}
+
+/* Project Titles */
+.dark-mode .project-card h3 {
+    color: #00c6ff; /* Bright text for clarity */
+}
+
+/* Project Descriptions */
+.dark-mode .project-card p {
+    color: #dcdcdc; /* Light gray for readability */
+}
+
+/* Project Images */
+.dark-mode .project-card img {
+    filter: brightness(0.8); /* Darkens images slightly */
+}
+
+/* Hover Effects */
+.dark-mode .project-card:hover {
+    background-color: #3a3a3a;
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2);
+}
