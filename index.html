@@ -1,116 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kishan | Portfolio</title>
-    <link rel="stylesheet" href="css/demo.css">
+    <meta name="description" content="Kishan's Portfolio - Creative front-end developer specializing in modern web design">
+    <meta name="keywords" content="web developer, portfolio, front-end, UI/UX, HTML, CSS, JavaScript">
+    <meta name="author" content="Kishan">
+    <meta property="og:title" content="Kishan | Portfolio">
+    <meta property="og:description" content="Creative front-end developer portfolio">
+    <title>Kishan | Front-End Developer Portfolio</title>
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
+    <!-- Skip to Content Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Header -->
-    <header>
-        <div class="logo">Kishan's Portfolio</div>
-        <button id="darkModeToggle" class="dark-mode-btn">🌙</button>
-        <button id="menuToggle" class="menu-btn">☰</button>
+    <header class="header">
+        <div class="logo" aria-label="Kishan's Portfolio">Kishan's Portfolio</div>
+        <div class="header-controls">
+            <button id="darkModeToggle" class="dark-mode-btn" aria-label="Toggle dark mode">🌙</button>
+            <button id="menuToggle" class="menu-btn" aria-expanded="false" aria-label="Toggle menu" aria-controls="navMenu">☰</button>
+        </div>
     </header>
 
     <!-- Navigation Menu -->
-    <nav id="navMenu">
-        <span id="closeMenu" class="close-menu"></span>
-        <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#about">About</a></li>
+    <nav id="navMenu" class="nav-menu" aria-hidden="true">
+        <button id="closeMenu" class="close-menu" aria-label="Close menu">×</button>
+        <ul class="nav-list">
+            <li><a href="#hero" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="hero">
-        <h1>Hi, I'm Kishan</h1>
-        <p>A creative & detail-oriented designer.</p>
-        <a href="#projects" class="cta">View My Work</a>
-    </section>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            Hey there! I'm Kishan, a passionate <strong>front-end web developer</strong> with a deep love for crafting
-            visually appealing and user-friendly websites.
-            With expertise in <strong>HTML, CSS, JavaScript</strong>, and modern UI/UX principles, I strive to create
-            designs that are **sleek, accessible, and responsive**.
-        </p>
-
-        <h3>My Design Philosophy</h3>
-        <p>
-            I believe in **clean, intuitive, and interactive designs** that enhance user engagement. Whether it's
-            implementing **dark mode**, refining
-            **hover effects**, or ensuring **seamless responsiveness**, every detail matters. My goal is to **bridge
-            aesthetics and functionality**, delivering
-            experiences that leave a lasting impact.
-        </p>
-
-        <h3>Skills & Technologies</h3>
-        <ul>
-            <li>✅ **Modern Web Design & UI/UX**</li>
-            <li>✅ **Responsive Website Development**</li>
-            <li>✅ **Advanced CSS & Animations**</li>
-            <li>✅ **JavaScript Interactivity & Dynamic Components**</li>
-            <li>✅ **Figma Prototyping & Design Structuring**</li>
-            <li>✅ **Cross-Browser Compatibility Optimization**</li>
-            <li>✅ **Performance Enhancement & Debugging**</li>
-        </ul>
-
-        <h3>My Vision</h3>
-        <p>
-            I'm constantly exploring **new technologies** and techniques to **push the boundaries of design**. My
-            current focus is **redesigning my portfolio** to
-            showcase my latest projects while implementing **modern accessibility features** and **innovative
-            animations**.
-            I aspire to contribute to **user-centric, accessible web experiences** that make browsing effortless and
-            enjoyable.
-        </p>
-    </section>
-
-
-    <!-- CV Download -->
-    <a href="resume/Kishan_cv.pdf" download>
-        <button class="cv-btn">Download CV</button>
-    </a>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <img src="assets/images/food-imagejpeg.jpeg" alt="Food App">
-                <h3>Food App Design</h3>
-                <p>Seamless navigation, dynamic filtering, and realistic imagery.</p>
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Hi, I'm Kishan</h1>
+                <p class="hero-subtitle">A creative & detail-oriented front-end developer</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="cta-button">View My Work</a>
+                    <a href="#contact" class="cta-button secondary">Hire Me</a>
+                </div>
             </div>
-            <div class="project-card">
-                <img src="assets/images/portfolio.jpeg" alt="Portfolio Website">
-                <h3>Portfolio Website</h3>
-                <p>Fully responsive, modern web portfolio showcasing design expertise.</p>
+            <div class="hero-scroll-indicator" aria-hidden="true">
+                <span></span>
             </div>
-            <div class="project-card">
-                <img src="/assets/images/ecommercejpg.jpg" alt="E-Commerce Platform">
-                <h3>E-Commerce Platform</h3>
-                <p>Secure online shopping experience with user-friendly checkout.</p>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="section-container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-grid">
+                    <div class="about-intro">
+                        <p class="about-text">
+                            Hey there! I'm Kishan, a passionate <strong>front-end web developer</strong> with a deep love for crafting
+                            visually appealing and user-friendly websites. With expertise in <strong>HTML, CSS, JavaScript</strong>, 
+                            and modern UI/UX principles, I strive to create designs that are sleek, accessible, and responsive.
+                        </p>
+                    </div>
+                    
+                    <div class="about-philosophy">
+                        <h3 class="subsection-title">My Design Philosophy</h3>
+                        <p class="about-text">
+                            I believe in clean, intuitive, and interactive designs that enhance user engagement. Whether it's
+                            implementing dark mode, refining hover effects, or ensuring seamless responsiveness, every detail matters. 
+                            My goal is to bridge aesthetics and functionality, delivering experiences that leave a lasting impact.
+                        </p>
+                    </div>
+                    
+                    <div class="about-skills">
+                        <h3 class="subsection-title">Skills & Technologies</h3>
+                        <ul class="skills-list">
+                            <li class="skill-item">Modern Web Design & UI/UX</li>
+                            <li class="skill-item">Responsive Website Development</li>
+                            <li class="skill-item">Advanced CSS & Animations</li>
+                            <li class="skill-item">JavaScript Interactivity</li>
+                            <li class="skill-item">Figma Prototyping</li>
+                            <li class="skill-item">Cross-Browser Compatibility</li>
+                            <li class="skill-item">Performance Optimization</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="about-vision">
+                        <h3 class="subsection-title">My Vision</h3>
+                        <p class="about-text">
+                            I'm constantly exploring new technologies and techniques to push the boundaries of design. My
+                            current focus is redesigning my portfolio to showcase my latest projects while implementing 
+                            modern accessibility features and innovative animations. I aspire to contribute to user-centric, 
+                            accessible web experiences that make browsing effortless and enjoyable.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="section-container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="project-grid">
+                    <article class="project-card" tabindex="0">
+                        <div class="project-image-container">
+                            <img src="assets/images/food-imagejpeg.jpeg" alt="Food App interface showing menu items" class="project-image" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Food App Design</h3>
+                            <p class="project-description">Seamless navigation, dynamic filtering, and realistic imagery.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">UI/UX</span>
+                                <span class="tech-tag">Mobile First</span>
+                                <span class="tech-tag">React</span>
+                            </div>
+                            <a href="#" class="project-link" aria-label="View Food App project details">View Project →</a>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card" tabindex="0">
+                        <div class="project-image-container">
+                            <img src="assets/images/portfolio.jpeg" alt="Portfolio website design" class="project-image" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Portfolio Website</h3>
+                            <p class="project-description">Fully responsive, modern web portfolio showcasing design expertise.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <a href="#" class="project-link" aria-label="View Portfolio project details">View Project →</a>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card" tabindex="0">
+                        <div class="project-image-container">
+                            <img src="assets/images/ecommercejpg.jpg" alt="E-commerce platform product page" class="project-image" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">E-Commerce Platform</h3>
+                            <p class="project-description">Secure online shopping experience with user-friendly checkout.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">E-Commerce</span>
+                                <span class="tech-tag">Payment API</span>
+                                <span class="tech-tag">Vue.js</span>
+                            </div>
+                            <a href="#" class="project-link" aria-label="View E-Commerce project details">View Project →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="section-container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3 class="contact-subtitle">Contact Information</h3>
+                        <ul class="contact-list">
+                            <li class="contact-item">
+                                <span class="contact-icon">📞</span>
+                                <a href="tel:+916353373957" class="contact-link">+91 6353373957</a>
+                            </li>
+                            <li class="contact-item">
+                                <span class="contact-icon">📧</span>
+                                <a href="mailto:gajjarsk111@gmail.com" class="contact-link">gajjarsk111@gmail.com</a>
+                            </li>
+                            <li class="contact-item">
+                                <span class="contact-icon">🔗</span>
+                                <a href="https://www.linkedin.com/in/kishan-sondagar-334a5a291" target="_blank" rel="noopener noreferrer" class="contact-link">
+                                    LinkedIn Profile
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="email-cta">
+                        <h3 class="contact-subtitle">Ready to work together?</h3>
+                        <p>Have a project in mind or want to discuss opportunities?</p>
+                        <a href="mailto:gajjarsk111@gmail.com" class="email-button">
+                            Email Me Directly
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">Kishan's Portfolio</div>
+            <nav class="footer-nav">
+                <ul class="footer-nav-list">
+                    <li><a href="#hero" class="footer-nav-link">Home</a></li>
+                    <li><a href="#about" class="footer-nav-link">About</a></li>
+                    <li><a href="#projects" class="footer-nav-link">Projects</a></li>
+                    <li><a href="#contact" class="footer-nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="footer-social">
+                <a href="#" class="social-link" aria-label="GitHub">
+                    <span class="social-icon">🐱</span>
+                </a>
+                <a href="#" class="social-link" aria-label="Twitter">
+                    <span class="social-icon">🐦</span>
+                </a>
+                <a href="https://www.linkedin.com/in/kishan-sondagar-334a5a291" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                    <span class="social-icon">🔗</span>
+                </a>
             </div>
         </div>
-    </section>
+        <div class="footer-copyright">
+            <p>© <span id="currentYear"></span> Kishan. All rights reserved.</p>
+        </div>
+    </footer>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p><strong>📞 Mobile:</strong> <a href="tel:+916353373957">+91 6353373957</a></p>
-        <p><strong>📧 Email:</strong> <a href="mailto:gajjarsk111@gmail.com">gajjarsk111@gmail.com</a></p>
-        <p><strong>🔗 LinkedIn:</strong> <a href="https://www.linkedin.com/in/kishan-sondagar-334a5a291"
-                target="_blank">LinkedIn Profile</a></p>
-    </section>
+    <!-- CV Download Floating Button -->
+    <a href="resume/Kishan_cv.pdf" download class="cv-floating-btn" aria-label="Download CV">
+        <span class="cv-btn-icon">📄</span>
+        <span class="cv-btn-text">Download CV</span>
+    </a>
 
-    <script src="/javascript/script.js"></script>
+    <script src="javascript/script.js" defer></script>
 </body>
-
 </html>
